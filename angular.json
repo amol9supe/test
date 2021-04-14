@@ -118,6 +118,46 @@
           }
         }
       }
+    },
+    "multiselectui-lib": {
+      "projectType": "library",
+      "root": "projects/multiselectui-lib",
+      "sourceRoot": "projects/multiselectui-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/multiselectui-lib/tsconfig.lib.json",
+            "project": "projects/multiselectui-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/multiselectui-lib/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/multiselectui-lib/src/test.ts",
+            "tsConfig": "projects/multiselectui-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/multiselectui-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/multiselectui-lib/tsconfig.lib.json",
+              "projects/multiselectui-lib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "amol9supe-angular"
